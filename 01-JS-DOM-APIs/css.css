@@ -6,3 +6,7 @@ section{
     opacity: 0;
     transition: 5s;
 }
+
+.button{
+    text-align: center;
+}
