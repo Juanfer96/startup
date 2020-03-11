@@ -17,19 +17,24 @@ html {
 .texto h4{
     margin-left:30px;
 }
-
-.flex{
-    padding:10px;
+.col{
     display: flex;
-    overflow: hidden;
-    width:95%;
+    flex-direction: column; 
+    margin: 0 auto;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    width:100%;
     margin: 0 auto;
 }
 
 .hover-img{
     position:relative;
-    margin:0 15px 10px 0;
+    margin:0 auto;
+
 }
+
 .hover-img p{
     position:absolute;
     opacity:0;   
@@ -46,4 +51,24 @@ html {
     color: black;
 }
 
+
+/* MOBILE FIRST */
+@media only screen and (min-width:1000px){
+    .col{
+        flex-direction: row;
+    }
+    
+}
+@media only screen and (min-width:1200px){
+    .flex{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .col{
+        flex-direction: column;
+        max-width: 33%;
+        overflow: hidden;
+    }
+  
+}
 
