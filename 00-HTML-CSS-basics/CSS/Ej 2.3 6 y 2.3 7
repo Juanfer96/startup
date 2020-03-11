@@ -1,7 +1,13 @@
-6- I can add weight to the global font definition to win over the classes added by point 3 by creating a global selector
+6- I can add weight to the global font definition to win over the classes added by point 3 using !important
 
-*{
-    font-weight: 700;
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 100 !important;
 }
 
-7- Debo consultarlo. 
+7- I can change the background to green without changing the inline style using !important as in the previus exercise
+
+.oh-no-inline-styles{
+    background: green !important;
+}
