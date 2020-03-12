@@ -1,26 +1,3 @@
-class  Movie{
-    constructor(name,year,duration){
-        this.title= name;
-        this.year=year;
-        this.duration=duration;
-    }
-    play(){
-
-    }
-
-    pause(){
-
-    }
-    resume(){
-
-    }
-}
-class Actor{
-    constructor(name,age){
-        this.name=name;
-        this.age=age;
-    }
-}
 class EventEmitter{
     constructor(){ 
         this.events = {};    
@@ -56,23 +33,49 @@ class EventEmitter{
         }
     }
 }
+class  Movie extends  EventEmitter{
+    constructor(name,year,duration){
+        super();
+        this.title= name;
+        this.year=year;
+        this.duration=duration;
+        super.on('Play',fn =>  console.log('You are playing'+ this.title ));
+        super.on('Resume',fn => console.log('You resume '+ this.title ));
+        super.on('Pause',fn =>  console.log('You pause '+ this.title ));
+    }
+  
+    play(){
+        super.emit('Play');
+    
+    }
+
+    pause(){
+    
+        super.emit('Resume');
+
+    }
+    resume(){
+        super.emit('Pause');
+    }
+    
+}
+class Actor{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+}
+
 
 /* SOME  RANDOMS TEST  */
 let  ironman  =  new  Movie('Ironman','2015','140');
-
-console.log(ironman.title);
-console.log(ironman.year);
-console.log(ironman.duration);
-console.log(ironman instanceof Movie);
-
-let events  = new EventEmitter() ;
-let playIronman = () => console.log('Reproduciendo Ironman ');
-let playSpiderman = () =>console.log('Reproduciendo Spiderman ');
-events.on('Play', playIronman);
-events.on('Play', playSpiderman);
-events.off('Play',playSpiderman);
-events.emit('Play');
+ironman.play();
+ironman.pause();
+ironman.resume();
 
 
-console.log(events.getEvents()['Play']);
+
+
+
+
 
