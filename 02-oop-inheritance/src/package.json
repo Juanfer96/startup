@@ -1,0 +1,16 @@
+{
+  "name": "02-oop-inheritance",
+  "version": "1.0.0",
+  "description": "Topic2 Ex 5",
+  "main": "class.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
