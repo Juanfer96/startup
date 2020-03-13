@@ -79,27 +79,35 @@ class Logger{
 
 }
 
+function mixin(receiver, supplier) {
+    Object.keys(supplier).forEach(function(key) {
+        receiver[key] = supplier[key];
+    });
+
+    return receiver;
+}
 
 /* SOME  RANDOMS TEST  */
 
 let  ironman  =  new  Movie('Ironman','2015','140');
 
-const arnold = new Actor('Arnold Schwarzenegger', 50);
-const actors = [
-    new Actor('Paul Winfield', 50),
-    new Actor('Michael Biehn', 50),
-    new Actor('Linda Hamilton', 50)
-];
+let social = {
+    name: 'like/share obj',
+    share: function(friendName) {  
+        console.log(friendName+' share ');
+    },
+    like: function(friendName) {  
+        console.log(friendName +' like ');
+    }
+};
 
-ironman.addCast(arnold);
-console.log(ironman.getActors());
-ironman.addCast(actors);
-console.log(ironman.getActors());
+mixin(ironman, social);
 
-let logg = new Logger();
+ironman.share('Nico');
 
-ironman.on('Play', () => logg.log('The "play" event has been emitted'))
-ironman.play() // output  'The "play" event has been emitted'
+/* CONSULTA ,  como hacer para poder agregar el nombre de la movie  en el metodo share  */
+
+
 
 
 
