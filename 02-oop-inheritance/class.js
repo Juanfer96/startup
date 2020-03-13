@@ -17,7 +17,7 @@ class EventEmitter{
         const event = this.events[eventName];
         if( event ) {
             event.forEach(fn => {
-                fn.call();
+                fn();
             });
    }
 
@@ -39,23 +39,20 @@ class  Movie extends  EventEmitter{
         this.title= name;
         this.year=year;
         this.duration=duration;
-        super.on('Play',fn =>  console.log('You are playing'+ this.title ));
-        super.on('Resume',fn => console.log('You resume '+ this.title ));
-        super.on('Pause',fn =>  console.log('You pause '+ this.title ));
     }
   
     play(){
-        super.emit('Play');
+        this.emit('Play');
     
     }
 
     pause(){
     
-        super.emit('Resume');
+        this.emit('Pause');
 
     }
     resume(){
-        super.emit('Pause');
+        this.emit('Resume');
     }
     
 }
@@ -68,7 +65,12 @@ class Actor{
 
 
 /* SOME  RANDOMS TEST  */
+
 let  ironman  =  new  Movie('Ironman','2015','140');
+ironman.on('Play',fn =>  console.log('Playing '+ ironman.title ));
+ironman.on('Pause',fn =>  console.log(ironman.title + ' is paused'));
+ironman.on('Resume',fn =>  console.log('Resume '+ ironman.title ));
+
 ironman.play();
 ironman.pause();
 ironman.resume();
