@@ -9,12 +9,10 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <section>
-            <li><label for="random-text">Random-text:</label> <textarea name="random-text" id="random-text" cols="25" rows="3"></textarea></li>
-            <button  type="button" id="save">Save</button>
-            <h4  id='saved-data'>The saved information will be displayed here</h4>
-            <button type="button"  id="clear">Clear</button>
+    <section id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+       <h1>Drop one or more files Here</h1>
+       <p id="data-zone">Empty </p>
     </section>
-    <script src="indexedDB.js"></script>
+    <script src="dragAndDrop.js"></script>
 </body>
 </html>

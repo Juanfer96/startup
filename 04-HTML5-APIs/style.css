@@ -3,3 +3,9 @@ section{
     margin: 0  auto;
     font-size: large;
 }
+
+#drop_zone {
+    border: 5px solid blue;
+    width:  400px;
+    height: 300px;
+  }
