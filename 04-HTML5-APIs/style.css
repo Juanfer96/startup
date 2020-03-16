@@ -1,11 +1,5 @@
-section{
-    text-align: center;
-    margin: 0  auto;
-    font-size: large;
+.info{
+    margin: 15px ;
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
-#drop_zone {
-    border: 5px solid blue;
-    width:  400px;
-    height: 300px;
-  }
