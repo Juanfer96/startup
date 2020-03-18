@@ -1,5 +1,5 @@
-let c = document.getElementById("canvas-geometric");
-let ctx = c.getContext("2d");
+const c = document.getElementById("canvas-geometric");
+const ctx = c.getContext("2d");
 window.onload =drawAll(ctx);
 
 function drawLine(ctx){
@@ -47,8 +47,8 @@ function drawAll(ctx) {
   drawGradient(ctx);
 }
 
-let canvas = document.getElementById("rectangle");
-let context = canvas.getContext("2d");
+const canvas = document.getElementById("rectangle");
+const context = canvas.getContext("2d");
 let  x = 0;
 let  y = 0;
 let  vel = 5;
@@ -79,6 +79,3 @@ function moveRectangleUpDown (){
 
 const moveRectangle = () =>  setInterval(moveRectangleUpDown,50);
 moveRectangle();
-
-
-
