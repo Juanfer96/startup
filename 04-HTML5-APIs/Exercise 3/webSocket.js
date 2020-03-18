@@ -33,7 +33,7 @@ function doSend(message) {
 }
 
 function writeToScreen(message) {
-  let pre = document.createElement("p");
+  const pre = document.createElement("p");
   pre.style.wordWrap = "break-word";
   pre.innerHTML = message;
   output.appendChild(pre);

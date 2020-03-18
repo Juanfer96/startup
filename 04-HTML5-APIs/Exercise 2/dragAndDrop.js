@@ -4,7 +4,7 @@ function dropHandler(ev) {
     dataZone.textContent=''
     // Prevent default behavior (Prevent file from being opened)
     ev.preventDefault();
-    let files = ev.dataTransfer.files;
+    const files = ev.dataTransfer.files;
     for (var i = 0; i < files.length ; i++) {
         if(files[i].type ==  'text/plain'){
             files[i].text()

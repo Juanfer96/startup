@@ -5,7 +5,7 @@ saveButton.onclick = saveData;
 clearButton.onclick= clearData;
 
 function saveData(){
-    let data = document.getElementById('random-text').value
+    const data = document.getElementById('random-text').value
     localStorage.setItem('data',data);
     document.getElementById('saved-data').innerHTML =  localStorage.data;
 }

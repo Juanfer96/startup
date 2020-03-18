@@ -32,7 +32,7 @@ function  drawStrokeText(ctx){
 }
 
 function drawGradient(ctx){
-  let grd = ctx.createLinearGradient(160, 0, 200, 100);
+  const grd = ctx.createLinearGradient(160, 0, 200, 100);
   grd.addColorStop(1, "blue");
   grd.addColorStop(0, "yellow");
   ctx.fillStyle = grd;
@@ -52,7 +52,6 @@ const context = canvas.getContext("2d");
 let  x = 0;
 let  y = 0;
 let  vel = 5;
-let UpDown= true;
 canvas.heigth=400;
 canvas.width=400;
 
@@ -61,7 +60,7 @@ function drawBackground(){
   context.fillRect(0, 0, 400, 400);
 }
 function drawRectangle(){
-  let grd = ctx.createLinearGradient(x, y, 400, 100);
+  const grd = ctx.createLinearGradient(x, y, 400, 100);
   grd.addColorStop(1, "blue");
   grd.addColorStop(0, "yellow");
   context.fillStyle = grd;
