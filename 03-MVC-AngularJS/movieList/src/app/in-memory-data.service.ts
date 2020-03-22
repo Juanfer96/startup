@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Imovie } from './movieI';
+import { Imovie } from './Interfaces/movieI';
 import { Injectable } from '@angular/core';
 
 @Injectable({
