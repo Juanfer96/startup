@@ -1,0 +1,43 @@
+.title{
+  background-color: rgb(220, 206, 187);
+  padding: .2em;
+  color: #614040;
+  font-size: 2em;
+}
+.movies {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+    
+  }
+  .movies li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color:  rgb(230, 225, 219);
+    margin: .5em;
+    padding: .3em 0;
+    height: 3em;
+    border-radius: 4px;
+  }
+  .movies li:hover {
+    color: #614040;
+    background-color:  rgb(238, 225, 210);
+    left: .3em;
+  }
+ 
+  .movies .badge {
+    display: inline-block;
+    font-size: 1em;
+    color: #614040;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color:rgb(220, 206, 187);
+    line-height: 1.5em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 2.7em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
