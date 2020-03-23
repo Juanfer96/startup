@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Imovie } from './Interfaces/movieI';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError,} from 'rxjs/operators';
+import {InMemoryDataService} from './in-memory-data.service'
 
 
 @Injectable({
@@ -11,7 +12,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class MovieService {
   private moviesUrl = 'api/movies';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private db: InMemoryDataService
+    ) { }
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -48,4 +52,18 @@ export class MovieService {
       catchError(this.handleError<any>('updateMovie'))
     );
   }
+  addMovie (movie: Imovie): Observable<any> {
+    return this.http.post<Imovie>(this.moviesUrl, movie, this.httpOptions).pipe(
+      catchError(this.handleError<any>('addMovie'))
+    );
+  }
+
+  deleteMovie (movie: Imovie | number): Observable<Imovie> {
+  const id = typeof movie === 'number' ? movie : movie.id;
+  const url = `${this.moviesUrl}/${id}`;
+
+  return this.http.delete<Imovie>(url, this.httpOptions).pipe(
+    catchError(this.handleError<Imovie>('deleteMovie'))
+  );
+}
 }

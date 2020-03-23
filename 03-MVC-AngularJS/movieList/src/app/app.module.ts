@@ -11,6 +11,8 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { MyTimePipe } from '../app/pipes/myTime';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { MovieUpdateComponent } from './components/movie-update/movie-update.component';
+import { MovieAddComponent } from './components/movie-add/movie-add.component';
+import { MovieDeleteComponent } from './components/movie-delete/movie-delete.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MovieUpdateComponent } from './components/movie-update/movie-update.com
     MovieDetailComponent,
     MyTimePipe,
     TopBarComponent,
-    MovieUpdateComponent
+    MovieUpdateComponent,
+    MovieAddComponent,
+    MovieDeleteComponent
   ],
   imports: [
     BrowserModule,

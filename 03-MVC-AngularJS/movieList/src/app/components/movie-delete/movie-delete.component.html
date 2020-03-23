@@ -1,0 +1,10 @@
+<section class="container">
+    <div class="title"><h2>Delete a favourite movie</h2></div>
+    <label class='item'>Movie id:
+      <input class="item-input" #movieId type="number" placeholder="Id of the movie to DELETE"/>
+    </label>
+    <button class="button" (click)="delete(movieId.value) ; movieId.value='';">
+      Delete
+    </button>
+</section>
+<app-movies></app-movies>

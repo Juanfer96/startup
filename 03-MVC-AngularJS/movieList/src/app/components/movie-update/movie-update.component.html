@@ -1,18 +1,20 @@
-<div>
-        <label>Movie Id:
-          <input #movieId />
+<section class="container">
+    <div class="title"><h2>Update a favourite movie</h2></div>
+        <label class='item'>Movie Id (an Id of the movies below):
+          <input class="item-input" #movieId placeholder="Ex :2"/>
         </label>
-        <label>Movie title:
-          <input #movieTitle />
+        <label class='item'>Movie title:
+          <input class="item-input" #movieTitle placeholder="Ex: Spiderman"/>
         </label>
-        <label>Movie duration:
-                <input #movieDuration />
+        <label class='item'>Movie duration (in min):
+            <input class="item-input" #movieDuration placeholder="Ex: 180"/>
         </label>
-        <label>Movie year:
-                <input #movieYear />
+        <label class='item'>Movie year:
+            <input class="item-input" #movieYear placeholder="Ex: 1995"/>
         </label>
         
-        <button (click)="update(movieId.value,movieTitle.value,movieDuration.value,movieYear.value);movieId.value='' ; movieTitle.value=''; movieDuration.value=''; movieYear.value=''">
+        <button class="button" (click)="update(movieId.value,movieTitle.value,movieDuration.value,movieYear.value);movieId.value='' ; movieTitle.value=''; movieDuration.value=''; movieYear.value=''">
           Update
         </button>
-</div>
+</section>
+<app-movies></app-movies>

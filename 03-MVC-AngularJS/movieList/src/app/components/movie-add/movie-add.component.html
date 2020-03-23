@@ -1,0 +1,19 @@
+<section class="container">
+    <div class="title"><h2>Add a favourite movie</h2></div>
+      <label class='item'>Movie title:
+        <input class="item-input" #movieTitle type="string" placeholder="Ex: Spiderman"/>
+      </label>
+      <label class='item'>Movie duration (in min):
+              <input class="item-input" #movieDuration type="number" placeholder="Ex: 180"/>
+      </label>
+      <label class='item'>Movie year:
+              <input class="item-input" #movieYear type="number" placeholder="Ex: 1995"/>
+      </label>
+    
+    <button class="button" (click)="add(movieTitle.value,movieDuration.value,movieYear.value) ; movieTitle.value=''; movieDuration.value=''; movieYear.value=''">
+      Add
+    </button>
+</section>
+<app-movies></app-movies>
+
+
