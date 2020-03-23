@@ -1,11 +1,8 @@
-.title{
-  background-color: rgb(220, 206, 187);
-  padding: .2em;
-  color: #614040;
-  font-size: 2em;
+.list{
+  margin: 0 2em 0 2em;
 }
 .movies {
-    margin: 0 0 2em 0;
+    margin: 0 auto;
     list-style-type: none;
     padding: 0;
     width: 15em;

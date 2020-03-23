@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { MyTimePipe } from '../app/pipes/myTime';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { MovieUpdateComponent } from './components/movie-update/movie-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     MovieDetailComponent,
-    MyTimePipe
+    MyTimePipe,
+    TopBarComponent,
+    MovieUpdateComponent
   ],
   imports: [
     BrowserModule,

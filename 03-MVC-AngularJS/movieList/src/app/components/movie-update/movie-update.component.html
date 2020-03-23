@@ -1,0 +1,18 @@
+<div>
+        <label>Movie Id:
+          <input #movieId />
+        </label>
+        <label>Movie title:
+          <input #movieTitle />
+        </label>
+        <label>Movie duration:
+                <input #movieDuration />
+        </label>
+        <label>Movie year:
+                <input #movieYear />
+        </label>
+        
+        <button (click)="update(movieId.value,movieTitle.value,movieDuration.value,movieYear.value);movieId.value='' ; movieTitle.value=''; movieDuration.value=''; movieYear.value=''">
+          Update
+        </button>
+</div>
