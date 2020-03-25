@@ -1,0 +1,26 @@
+.container{
+    margin: 0 0 0 5em ;
+    float: left;
+    font-family: Cambria, Georgia;
+    background-color:  rgb(250, 246, 242);
+}
+.title{
+
+   color: #725a5a;
+   margin: .5em;
+   padding: .3em;
+   background-color: rgb(226, 219, 209);
+}
+.item{
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    margin: .5em;
+    padding: .3em ;
+    height: 2em;
+    border-radius: 4px;
+    font-size: 1.8em;
+    color:  #866d6d;
+    background-color: rgb(226, 219, 209);
+    line-height: 2em;
+}
+

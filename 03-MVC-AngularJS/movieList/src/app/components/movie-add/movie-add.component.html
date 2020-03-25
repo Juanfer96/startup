@@ -1,0 +1,21 @@
+<section class="container">
+    <div class="title"><h2 class="subtitle">Add a favourite movie</h2></div>
+      <form  [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <label class='item' for="title">Movie title:
+          <input class="item-input" id="title" formControlName="title" type="string" placeholder="Ex: Spiderman"/>
+        </label>
+        <label class='item' for="duration">Movie duration (in min):
+                <input class="item-input" id="duration" formControlName="duration" type="number" placeholder="Ex: 180"/>
+        </label>
+        <label class='item' for="year">Movie year:
+                <input class="item-input" id="year" formControlName="year" type="number" placeholder="Ex: 1995"/>
+        </label>
+      
+        <button class="button" type="submit" >
+          Add
+        </button>
+    </form>
+</section>
+<app-movies></app-movies>
+
+

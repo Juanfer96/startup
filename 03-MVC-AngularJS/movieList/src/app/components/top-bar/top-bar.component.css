@@ -1,0 +1,23 @@
+.top-bar{
+    background-color:  rgb(250, 246, 242);
+
+}
+.menu-item{
+    color: #614040 ;
+    display: inline-block;
+    position: relative;
+    font-size: 2.5em;
+    margin: .3em .7em .3em .7em;
+    padding: .2em .2em .2em .2em ;
+    font-size: 3em;   
+}
+.menu-item:hover{
+    background-color: rgb(220, 206, 187) ;
+    cursor: pointer;
+} 
+.menu-item:focus{
+    text-decoration-line: underline;
+    background-color: rgb(220, 206, 187) ;
+    outline: 0em;
+} 
+
