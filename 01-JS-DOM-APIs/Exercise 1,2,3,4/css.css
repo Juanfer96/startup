@@ -1,0 +1,29 @@
+section{
+    text-align: center;
+    float: left;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#hidden{
+    opacity: 0;
+    transition: 5s;
+}
+
+.button{
+    text-align: center;
+    clear: both;
+    width: 70%;
+    margin: 0 auto;
+}   
+#first-li{
+    font-size: large;
+    color: royalblue;
+}
+aside{
+    float: right;
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+}
+
