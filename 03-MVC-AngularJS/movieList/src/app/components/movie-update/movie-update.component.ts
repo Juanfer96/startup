@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Imovie }from '../../Interfaces/movieI'
 import {MovieService} from '../../movie.service'
 import { Location } from '@angular/common';
+import { FormBuilder } from '@angular/forms';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,25 +11,33 @@ import { Location } from '@angular/common';
   templateUrl: './movie-update.component.html',
   styleUrls: ['./movie-update.component.css']
 })
-export class MovieUpdateComponent implements OnInit {
+export class MovieUpdateComponent  {
   auxMovie : Imovie;
+  checkoutForm ;
 
   constructor(
     private movieService : MovieService,
-    private location: Location,
-    ) { }
+    private location :Location,
+    private formBuilder: FormBuilder,
+    private router : Router) {
+      this.checkoutForm = this.formBuilder.group({
+        id: 0,
+        title: "",
+        duration: "",
+        year: "",
+      });
+     }
   
-  ngOnInit(): void {
-  }
-  update(id: number, title: string,duration :number,year: number): void {
-    title = title.trim();
-    if (!id) { return; }
+  
+  onSubmit(movieData :Imovie){
+    movieData.title = movieData.title.trim();
+    if (!movieData.id) { return; }
     //I verify its actually a movie with that Id
-    this.movieService.getMovie(id)
+    this.movieService.getMovie(movieData.id)
     .subscribe(movie => {this.auxMovie=movie
-      this.auxMovie.title =title;
-      this.auxMovie.duration=duration;
-      this.auxMovie.year=year; 
+      this.auxMovie.title =movieData.title;
+      this.auxMovie.duration=movieData.duration;
+      this.auxMovie.year=movieData.year; 
       this.movieService.updateMovie(this.auxMovie)
       .subscribe(() => this.goBack()); 
     }); 
@@ -35,7 +45,7 @@ export class MovieUpdateComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigateByUrl('/movies');
   }
 
 }

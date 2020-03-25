@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Imovie }from '../../Interfaces/movieI'
 import {MovieService} from '../../movie.service'
 import { Location } from '@angular/common';
-
+import { FormBuilder } from '@angular/forms';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -10,33 +11,36 @@ import { Location } from '@angular/common';
   templateUrl: './movie-add.component.html',
   styleUrls: ['./movie-add.component.css']
 })
-export class MovieAddComponent implements OnInit {
+export class MovieAddComponent {
   movie :Imovie;
+  checkoutForm ;
   constructor(
     private movieService : MovieService,
-    private location: Location,) { }
+    private location: Location,
+    private formBuilder: FormBuilder,
+    private router: Router) {
+      this.checkoutForm = this.formBuilder.group({
+        id: 0,
+        title: "",
+        duration: "",
+        year: "",
+      });
+     }
 
-  ngOnInit(): void {
-  }
-
-  add(title: string,duration :number,year: number): void {
-    title = title.trim();
-    if (!title) { return; }
-      this.movie = {
-         id: 0, title: title, year: year ,duration: duration
-      }
+  onSubmit(movieData : Imovie){
+    movieData.title = movieData.title.trim();
+    if (!movieData.title) { return; }
       this.movieService.getMovies()
       .subscribe(movies => {
-        this.movie.id=movies.length > 0 ? Math.max(...movies.map(movie => movie.id)) + 1 : 1;
-        this.movieService.addMovie(this.movie)
-        .subscribe(()=> this.goBack());
-        
+        movieData.id=movies.length > 0 ? Math.max(...movies.map(movie => movie.id)) + 1 : 1;
+        this.movieService.addMovie(movieData)
+        .subscribe(()=> this.goBack()); 
       })    
       
     } 
     
     goBack(): void {
-      this.location.back();
+      this.router.navigateByUrl('/movies');
     }
 
 }

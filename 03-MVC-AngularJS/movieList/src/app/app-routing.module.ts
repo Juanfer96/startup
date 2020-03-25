@@ -6,10 +6,10 @@ import { MovieAddComponent } from './components/movie-add/movie-add.component';
 import { MovieDeleteComponent } from './components/movie-delete/movie-delete.component';
 
 const routes: Routes = [
-  {path: 'movies', component: MoviesComponent },
-  {path: 'update', component: MovieUpdateComponent},
-  {path: 'add', component: MovieAddComponent},
-  {path: 'delete', component: MovieDeleteComponent},
+  { path: 'movies', component: MoviesComponent },
+  { path: 'update', component: MovieUpdateComponent },
+  { path: 'add', component: MovieAddComponent },
+  { path: 'delete', component: MovieDeleteComponent },
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
 
   

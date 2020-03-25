@@ -1,20 +1,27 @@
 <section class="container">
-    <div class="title"><h2>Update a favourite movie</h2></div>
-        <label class='item'>Movie Id (an Id of the movies below):
-          <input class="item-input" #movieId placeholder="Ex :2"/>
-        </label>
-        <label class='item'>Movie title:
-          <input class="item-input" #movieTitle placeholder="Ex: Spiderman"/>
-        </label>
-        <label class='item'>Movie duration (in min):
-            <input class="item-input" #movieDuration placeholder="Ex: 180"/>
-        </label>
-        <label class='item'>Movie year:
-            <input class="item-input" #movieYear placeholder="Ex: 1995"/>
-        </label>
-        
-        <button class="button" (click)="update(movieId.value,movieTitle.value,movieDuration.value,movieYear.value);movieId.value='' ; movieTitle.value=''; movieDuration.value=''; movieYear.value=''">
-          Update
-        </button>
+  <div class="title"><h2 class="subtitle">Update a favourite movie</h2></div>
+    <form  [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+      
+      <label class='item' for="id">Movie Id to Update(an Id of the movies below):
+        <input class="item-input" id="id" formControlName="id" type="number" placeholder="Ex :2"/>
+      </label>
+
+      <label class='item' for="title">Movie title:
+        <input class="item-input" id="title" formControlName="title" type="string" placeholder="Ex: Spiderman"/>
+      </label>
+
+      <label class='item' for="duration">Movie duration (in min):
+              <input class="item-input" id="duration" formControlName="duration" type="number" placeholder="Ex: 180"/>
+      </label>
+
+      <label class='item' for="year">Movie year:
+              <input class="item-input" id="year" formControlName="year" type="number" placeholder="Ex: 1995"/>
+      </label>
+    
+      <button class="button" type="submit" >
+        Update
+      </button>
+
+  </form>
 </section>
 <app-movies></app-movies>

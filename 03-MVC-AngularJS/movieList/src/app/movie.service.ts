@@ -28,7 +28,6 @@ export class MovieService {
     );
   }
 
-  /** GET hero by id. Will 404 if id not found */
   getMovie(id: number): Observable<Imovie> {
     const url = `${this.moviesUrl}/${id}`;
     return this.http.get<Imovie>(url).pipe(
@@ -37,16 +36,12 @@ export class MovieService {
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-      // Let the app keep running by returning an empty result.
+    return (error: any): Observable<T> => {  
+      console.error(error); 
       return of(result as T);
     };
   }
 
-  /** PUT: update the hero on the server */
   updateMovie (movie: Imovie): Observable<any> {
     return this.http.put(this.moviesUrl, movie, this.httpOptions).pipe(
       catchError(this.handleError<any>('updateMovie'))

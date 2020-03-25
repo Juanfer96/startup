@@ -1,10 +1,12 @@
 <section class="container">
-    <div class="title"><h2>Delete a favourite movie</h2></div>
-    <label class='item'>Movie id:
-      <input class="item-input" #movieId type="number" placeholder="Id of the movie to DELETE"/>
+  <div class="title"><h2 class="subtitle">Delete a favourite movie</h2></div>
+  <form  [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <label class='item' for="id">Movie id:
+      <input class="item-input" id="id" formControlName="id" type="number" placeholder="Id of the movie to DELETE"/>
     </label>
-    <button class="button" (click)="delete(movieId.value) ; movieId.value='';">
+    <button class="button" type="submit" >
       Delete
     </button>
+  </form>
 </section>
 <app-movies></app-movies>
